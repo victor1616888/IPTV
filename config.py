@@ -1,17 +1,23 @@
-source_file = "demo.txt"
-final_file = "result.txt"
+source_file = "My.txt"
+final_file = "20240428.txt"
 favorite_list = [
-    "广东珠江",
-    "开平综合",
-    "开平生活",
-    "CCTV-1",
-    "CCTV-5",
-    "CCTV-5+",
-    "CCTV-13",
-    "广东体育",
-    "广东卫视",
-    "大湾区卫视",
+    "凤凰资讯",
+    "凤凰中文",
+    "凤凰香港",
+    "CCTV13",
+    "CCTV1",
+    "CCTV2",
+    "CCTV3",
+    "CCTV4",
+    "CCTV5",
+    "CCTV5+",
+    "CCTV9",
+    "CCTV10",
+    "广西卫视",
+    "北京卫视",
     "浙江卫视",
+    "江苏卫视",
+    "东方卫视",
     "湖南卫视",
     "翡翠台",
 ]
@@ -25,7 +31,7 @@ ipv_type = "ipv4"
 domain_blacklist = ["epg.pw"]
 url_keywords_blacklist = []
 extend_base_urls = [
-    "https://m3u.ibert.me/txt/fmml_dv6.txt",
-    "https://m3u.ibert.me/txt/o_cn.txt",
-    "https://m3u.ibert.me/txt/j_iptv.txt",
+    "https://fanmingming.com/txt?url=https://live.fanmingming.com/tv/m3u/ipv6.m3u",
+    "https://github.com/victor1616888/TVBOX-Q/blob/master/tvboxtv.txt",
+    "https://github.com/victor1616888/TVBOX-Q/blob/master/20230109.txt",
 ]
