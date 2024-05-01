@@ -1,5 +1,5 @@
 source_file = "My.txt"
-final_file = "20240428.txt"
+final_file = "20240501.txt"
 favorite_list = [
     "凤凰资讯",
     "凤凰中文",
@@ -23,7 +23,7 @@ favorite_list = [
 ]
 favorite_page_num = 5
 default_page_num = 3
-urls_limit = 20
+urls_limit = 25
 response_time_weight = 0.5
 resolution_weight = 0.5
 recent_days = 30
@@ -33,5 +33,5 @@ url_keywords_blacklist = []
 extend_base_urls = [
     "https://fanmingming.com/txt?url=https://live.fanmingming.com/tv/m3u/ipv6.m3u",
     "https://github.com/victor1616888/TVBOX-Q/blob/master/tvboxtv.txt",
-    "https://github.com/victor1616888/TVBOX-Q/blob/master/20230109.txt",
+    "https://3329.kstore.space/20230109.txt",
 ]
