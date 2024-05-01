@@ -4,13 +4,13 @@ on:
   schedule:
     - cron: '0 0 * * *'
   workflow_dispatch:
-    branches:
+    分支:
       - master
       - dev
 jobs:
   push:
     runs-on: ${{ matrix.operating-system }}
-    timeout-minutes: 120
+    timeout-minutes: 180
     strategy:
       matrix:
         operating-system: ['ubuntu-20.04']
