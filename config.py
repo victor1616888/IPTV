@@ -1,5 +1,5 @@
 source_file = "My.txt"
-final_file = "20240501.txt"
+final_file = "20240503.txt"
 favorite_list = [
     "凤凰资讯",
     "凤凰中文",
@@ -27,8 +27,8 @@ response_time_weight = 0.5
 resolution_weight = 0.5
 recent_days = 30
 ipv_type = "all"
-domain_blacklist = ["epg.pw"]
-url_keywords_blacklist = []
+domain_blacklist = ["epg.pw","gitee.com"]
+url_keywords_blacklist = ["gitee.com"]
 extend_base_urls = [
     "https://fanmingming.com/txt?url=https://live.fanmingming.com/tv/m3u/ipv6.m3u",
     "https://github.com/victor1616888/TVBOX-Q/blob/master/tvboxtv.txt",
