@@ -1,7 +1,7 @@
 { 
     "urls": [
         { "url": "http://www.饭太硬.com/tv", "name": "饭太硬" },
-        { "url": "http://fan.xxooo.cf/tv", "name": "饭太硬（备用）" },
+        { "url": "https://github.com/victor1616888/TVBOX-Q/blob/master/tvbox.json", "name": "yongchenglaoyou" },
         { "url": "http://xhww.fun/小米/DEMO.json", "name": "小米" },
         { "url": "http://肥猫.live", "name": "肥猫" },
         { "url": "https://tvbox.cainisi.cf", "name": "菜妮丝" },
@@ -10,6 +10,6 @@
         { "url": "http://tv.rihou.cc/天天开心", "name": "天天开心" },
         { "url": "http://rihou.cc:88/荷城茶秀", "name": "荷城茶秀" },
         { "url": "https://agit.ai/hu/hcr/raw/branch/master/短剧.json", "name": "短剧频道" },
-        { "url": "https://jihulab.com/ymz1231/xymz/-/raw/main/ymshaoer", "name": "少儿频道" }
+        { "url": "https://github.com/victor1616888/TVBOX-Q/blob/master/js.json", "name": "高天流云" }
     ]
 }
