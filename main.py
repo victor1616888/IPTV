@@ -1,5 +1,5 @@
 import asyncio
-from utils.config import config
+from utils.config import config, resource_path
 from utils.channel import (
     get_channel_items,
     append_total_data,
@@ -7,6 +7,7 @@ from utils.channel import (
     write_channel_to_file,
     setup_logging,
     cleanup_logging,
+    get_channel_data_cache_with_compare,
 )
 from utils.tools import (
     update_file,
@@ -14,6 +15,7 @@ from utils.tools import (
     get_ip_address,
     convert_to_m3u,
     get_result_file_content,
+    process_nested_dict,
 )
 from updates.subscribe import get_channels_by_subscribe_urls
 from updates.multicast import get_channels_by_multicast
@@ -28,6 +30,8 @@ from flask import Flask, render_template_string
 import sys
 import shutil
 import atexit
+import pickle
+import copy
 
 app = Flask(__name__)
 
@@ -119,15 +123,12 @@ class UpdateSource:
             )
 
     def get_urls_len(self, filter=False):
-        def process_cache_url(url):
-            if filter and "$cache:" in url:
-                cache_part = url.split("$cache:", 1)[1]
-                return cache_part.split("?")[0]
-            return url
-
+        data = copy.deepcopy(self.channel_data)
+        if filter:
+            process_nested_dict(data, seen=set(), flag="$cache:")
         processed_urls = set(
-            process_cache_url(url_info[0])
-            for channel_obj in self.channel_data.values()
+            url_info[0]
+            for channel_obj in data.values()
             for url_info_list in channel_obj.values()
             for url_info in url_info_list
         )
@@ -144,7 +145,7 @@ class UpdateSource:
             await self.visit_page(channel_names)
             self.tasks = []
             channel_items_obj_items = self.channel_items.items()
-            self.channel_data = append_total_data(
+            append_total_data(
                 channel_items_obj_items,
                 self.channel_data,
                 self.hotel_fofa_result,
@@ -153,9 +154,11 @@ class UpdateSource:
                 self.subscribe_result,
                 self.online_search_result,
             )
+            channel_data_cache = copy.deepcopy(self.channel_data)
             self.total = self.get_urls_len(filter=True)
             sort_callback = lambda: self.pbar_update(name="测速")
-            if config.getboolean("Settings", "open_sort"):
+            open_sort = config.getboolean("Settings", "open_sort")
+            if open_sort:
                 self.update_progress(
                     f"正在测速排序, 共{self.total}个接口",
                     0,
@@ -184,7 +187,16 @@ class UpdateSource:
                     else "result.txt"
                 )
                 shutil.copy(user_final_file, result_file)
-            if config.getboolean("Settings", "open_sort"):
+            if config.getboolean("Settings", "open_use_old_result"):
+                if open_sort:
+                    get_channel_data_cache_with_compare(
+                        channel_data_cache, self.channel_data
+                    )
+                with open(
+                    resource_path("output/result_cache.pkl", persistent=True), "wb"
+                ) as file:
+                    pickle.dump(channel_data_cache, file)
+            if open_sort:
                 user_log_file = "output/" + (
                     "user_result.log"
                     if os.path.exists("config/user_config.ini")
