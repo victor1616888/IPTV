@@ -4,13 +4,11 @@ from utils.tools import (
     get_total_urls_from_info_list,
     check_ipv6_support,
     process_nested_dict,
-    get_resolution_value,
-    format_interval,
 )
 from utils.speed import (
     sort_urls_by_speed_and_resolution,
     is_ffmpeg_installed,
-    add_info_url,
+    format_url,
     speed_cache,
 )
 import os
@@ -24,8 +22,6 @@ import asyncio
 import base64
 import pickle
 import copy
-import datetime
-from time import time
 
 log_dir = "output"
 log_file = "result_new.log"
@@ -526,7 +522,6 @@ def append_all_method_data(
     """
     for cate, channel_obj in items:
         for name, old_info_list in channel_obj.items():
-            print(f"{name}:", end=" ")
             for method, result in [
                 ("hotel_fofa", hotel_fofa_result),
                 ("multicast", multicast_result),
@@ -546,7 +541,11 @@ def append_all_method_data(
                         name,
                         name_results,
                     )
-                    print(f"{method.capitalize()}:", len(name_results), end=", ")
+                    print(
+                        name,
+                        f"{method.capitalize()} num:",
+                        len(name_results),
+                    )
             total_channel_data_len = len(data.get(cate, {}).get(name, []))
             if total_channel_data_len == 0 or config.getboolean(
                 "Settings", "open_use_old_result"
@@ -557,9 +556,10 @@ def append_all_method_data(
                     name,
                     old_info_list,
                 )
-                print("old:", len(old_info_list), end=", ")
+                print(name, "using old num:", len(old_info_list))
             print(
-                "total:",
+                name,
+                "total num:",
                 len(data.get(cate, {}).get(name, [])),
             )
 
@@ -590,9 +590,8 @@ def append_all_method_data_keep_all(
                 ) and config.getboolean("Settings", f"open_hotel") == False:
                     continue
                 for name, urls in result.items():
-                    print(f"{name}:", end=" ")
                     append_data_to_info_data(data, cate, name, urls)
-                    print(name, f"{method.capitalize()}:", len(urls), end=", ")
+                    print(name, f"{method.capitalize()} num:", len(urls))
                     if config.getboolean("Settings", "open_use_old_result"):
                         old_info_list = channel_obj.get(name, [])
                         append_data_to_info_data(
@@ -601,23 +600,11 @@ def append_all_method_data_keep_all(
                             name,
                             old_info_list,
                         )
-                        print(name, "old:", len(old_info_list), end=", ")
-                    print(
-                        "total:",
-                        len(data.get(cate, {}).get(name, [])),
-                    )
+                        print(name, "using old num:", len(old_info_list))
 
 
 async def sort_channel_list(
-    cate,
-    name,
-    info_list,
-    semaphore,
-    ffmpeg=False,
-    ipv6_proxy=None,
-    filter_resolution=False,
-    min_resolution=None,
-    callback=None,
+    cate, name, info_list, semaphore, ffmpeg=False, ipv6_proxy=None, callback=None
 ):
     """
     Sort the channel list
@@ -635,10 +622,6 @@ async def sort_channel_list(
                         date,
                         resolution,
                     ), response_time in sorted_data:
-                        if resolution and filter_resolution:
-                            resolution_value = get_resolution_value(resolution)
-                            if resolution_value < min_resolution:
-                                continue
                         logging.info(
                             f"Name: {name}, URL: {url}, Date: {date}, Resolution: {resolution}, Response Time: {response_time} ms"
                         )
@@ -655,8 +638,6 @@ async def process_sort_channel_list(data, callback=None):
     """
     open_ffmpeg = config.getboolean("Settings", "open_ffmpeg")
     ipv_type = config.get("Settings", "ipv_type").lower()
-    open_filter_resolution = config.getboolean("Settings", "open_filter_resolution")
-    min_resolution = get_resolution_value(config.get("Settings", "min_resolution"))
     open_ipv6 = "ipv6" in ipv_type or "all" in ipv_type or "全部" in ipv_type
     ipv6_proxy = (
         None
@@ -667,7 +648,7 @@ async def process_sort_channel_list(data, callback=None):
     if open_ffmpeg and not ffmpeg_installed:
         print("FFmpeg is not installed, using requests for sorting.")
     is_ffmpeg = open_ffmpeg and ffmpeg_installed
-    semaphore = asyncio.Semaphore(5)
+    semaphore = asyncio.Semaphore(3)
     need_sort_data = copy.deepcopy(data)
     process_nested_dict(need_sort_data, seen=set(), flag="$cache:")
     tasks = [
@@ -679,8 +660,6 @@ async def process_sort_channel_list(data, callback=None):
                 semaphore,
                 ffmpeg=is_ffmpeg,
                 ipv6_proxy=ipv6_proxy,
-                filter_resolution=open_filter_resolution,
-                min_resolution=min_resolution,
                 callback=callback,
             )
         )
@@ -714,11 +693,7 @@ async def process_sort_channel_list(data, callback=None):
                 response_time, resolution = cache
                 if response_time and response_time != float("inf"):
                     if resolution:
-                        url = add_info_url(url, resolution)
-                        if open_filter_resolution:
-                            resolution_value = get_resolution_value(resolution)
-                            if resolution_value < min_resolution:
-                                continue
+                        url = format_url(url, resolution)
                     append_data_to_info_data(
                         sort_data,
                         cate,
@@ -736,24 +711,12 @@ def write_channel_to_file(items, data, callback=None):
     """
     Write channel to file
     """
-    open_update_time = config.getboolean("Settings", "open_update_time")
-    if open_update_time:
-        now = datetime.datetime.now()
-        if os.environ.get("GITHUB_ACTIONS"):
-            now += datetime.timedelta(hours=8)
-        update_time = now.strftime("%Y-%m-%d %H:%M:%S")
-        update_channel_urls_txt("更新时间", f"{update_time}", ["url"])
     for cate, channel_obj in items:
-        print(f"\n{cate}:", end=" ")
-        channel_obj_keys = channel_obj.keys()
-        names_len = len(list(channel_obj_keys))
-        for i, name in enumerate(channel_obj_keys):
+        for name in channel_obj.keys():
             info_list = data.get(cate, {}).get(name, [])
             channel_urls = get_total_urls_from_info_list(info_list)
-            end_char = ", " if i < names_len - 1 else ""
-            print(f"{name}:", len(channel_urls), end=end_char)
+            print("write:", cate, name, "num:", len(channel_urls))
             update_channel_urls_txt(cate, name, channel_urls, callback=callback)
-        print()
 
 
 def get_multicast_fofa_search_org(region, type):
@@ -809,31 +772,15 @@ def get_channel_data_cache_with_compare(data, new_data):
     """
     Get channel data with cache compare new data
     """
+
+    def match_url(url, sort_urls):
+        url = url.split("$", 1)[0]
+        return url in sort_urls
+
     for cate, obj in new_data.items():
         for name, url_info in obj.items():
             if url_info and cate in data and name in data[cate]:
-                new_urls = {
-                    new_url.split("$", 1)[0]: new_resolution
-                    for new_url, _, new_resolution in url_info
-                }
-                updated_data = []
-                for info in data[cate][name]:
-                    url, date, resolution = info
-                    base_url = url.split("$", 1)[0]
-                    if base_url in new_urls:
-                        resolution = new_urls[base_url]
-                        updated_data.append((url, date, resolution))
-                data[cate][name] = updated_data
-
-
-def format_channel_url_info(data):
-    """
-    Format channel url info, remove cache, add resolution to url
-    """
-    for obj in data.values():
-        for url_info in obj.values():
-            for i, (url, date, resolution) in enumerate(url_info):
-                url = url.split("$", 1)[0]
-                if resolution:
-                    url = add_info_url(url, resolution)
-                url_info[i] = (url, date, resolution)
+                new_urls = {new_url for new_url, _, _ in url_info}
+                data[cate][name] = [
+                    info for info in data[cate][name] if match_url(info[0], new_urls)
+                ]
