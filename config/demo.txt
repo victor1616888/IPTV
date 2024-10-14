@@ -24,6 +24,9 @@
 北京IPTV4K,http://111.196.184.130:5555/rtp/239.3.1.249:8001
 北京IPTV4K,http://114.254.91.45:4000/rtp/239.3.1.249:8001
 北京IPTV4K,http://114.253.165.121:10000/rtp/239.3.1.249:8001#http://webmail.axxe.top:4022/rtp/239.3.1.249:8001#http://222.129.37.111:9001/rtp/239.3.1.249:8001#http://111.197.130.58:1314/rtp/239.3.1.249:8001
+爱上4K,http://[2409:8087:5e01:34::23]:6610/ZTE_CMS/00000001000000060000000000000459/index.m3u8?IAS
+纪实人文,http://[2409:8087:1a01:df::7005]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225738/index.m3u8
+纪实科教,http://[2409:8087:1a01:df::7005]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225729/index.m3u8
 斗鱼4k电影,http://allinone.netsite.cc/douyu/9249162#http://159.75.85.63:35455/douyu/9249162#http://epg.112114.xyz/douyu/9249162#https://sxtv.cloudns.org/douyu/9249162
 4KUHD,http://[2409:8087:5c00:10:5::10]/cdnrrs.gx.chinamobile.com/PLTV/3/224/3221225726/index.m3u8?servicetype=1
 4KUHD,http://[2409:8087:5c00:10:5::120]/cdnrrs.gx.chinamobile.com/PLTV/3/224/3221225726/index.m3u8?servicetype=1
