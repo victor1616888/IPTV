@@ -151,6 +151,9 @@ def format_channel_name(name):
         "CCTV16奥林匹克": "CCTV16",
         "CCTV17农业农村": "CCTV17",
         "CCTV17农业": "CCTV17",
+        "凤凰卫视资讯台": "凤凰资讯",
+        "凤凰卫视中文台": "凤凰中文",
+        "凤凰卫视香港台": "凤凰香港",     
     }
     for old, new in replace_dict.items():
         name = name.replace(old, new)
