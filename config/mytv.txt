@@ -1,17 +1,18 @@
 🇨🇳 4K & 8K频道,#genre#
 华数4k
+4KUHD
+CTV4K
 北京IPTV4K
 爱上4K
 纪实人文
+CCTV16
+淘电影
 纪实科教
 斗鱼4k电影
-4KUHD
-CCTV16
 淘剧场
-淘电影
 CHC动作电影
-CHC电影
 CHC家庭影院
+CHC影迷电影
 Loupe 4K
 苏州4k
 Fashion 4K
@@ -61,8 +62,8 @@ CCTV-17
 兵器科技
 📡卫视频道,#genre#
 广西卫视
-浙江卫视
 北京卫视
+浙江卫视
 东方卫视
 江苏卫视
 广东卫视
