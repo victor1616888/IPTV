@@ -50,8 +50,8 @@ Name: CHC动作电影, URL: http://[2409:8087:4c0a:22:1::11]:6410/170000001115/U
 Name: CHC动作电影, URL: http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00002030/index.m3u8?IASHttpSessionId=$订阅源, Date: None, Resolution: None, Response Time: 0 ms
 Name: CHC动作电影, URL: http://[2409:8087:2001:20:2800:0:df6e:eb06]:80/wh7f454c46tw1555700033_-766721196/ott.mobaibox.com/PLTV/3/224/3221227606/index.m3u8?icpid=3&RTS=1674385966&from=40&popid=40&hms_devid=2036&prioritypopid=40&vqe=3$订阅源, Date: None, Resolution: None, Response Time: 0 ms
 Name: CHC动作电影, URL: http://[2409:8087:1a01:df::4021]/TVOD/88888888/224/3221225555/main.m3u8$订阅源, Date: None, Resolution: None, Response Time: 0 ms
-Name: CHC动作电影, URL: http://[2001:250:5800:1005::155]:80/liverespath/e0096742f0c5be4c5225cf3c7ab1077177bec05f/index.m3u8$订阅源, Date: None, Resolution: None, Response Time: 0 ms
 Name: CHC动作电影, URL: http://[2409:8087:1a01:df::4021]:80/TVOD/88888888/224/3221225555/main.m3u8$订阅源, Date: None, Resolution: None, Response Time: 0 ms
+Name: CHC动作电影, URL: http://[2001:250:5800:1005::155]:80/liverespath/e0096742f0c5be4c5225cf3c7ab1077177bec05f/index.m3u8$订阅源, Date: None, Resolution: None, Response Time: 0 ms
 Name: 五星体育, URL: http://[2409:8087:1e03:21::2]:6060/cms001/ch00000090990000001018/index.m3u8$订阅源, Date: None, Resolution: None, Response Time: 0 ms
 Name: 五星体育, URL: http://[2409:8087:1e03:21::42]:6610/cms001/ch00000090990000001018/index.m3u8?$订阅源, Date: None, Resolution: None, Response Time: 0 ms
 Name: 五星体育, URL: http://[2409:8087:5e08:24::17]:6610/000000001000/2000000002000000007/index.m3u8?stbId=3&livemode=1&HlsProfileId=&channel-id=hnbblive&Contentid=2000000002000000007&IASHttpSessionId=OTT19019320240419154124000281$订阅源, Date: None, Resolution: None, Response Time: 0 ms
@@ -135,7 +135,7 @@ Name: 云南卫视, URL: http://[2409:8087:4402:20:1:1216:401:14]/iptv.cdn.ha.ch
 Name: 超级电影, URL: http://[2409:8087:1a0b:df::4006]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225717/index.m3u8$订阅源, Date: None, Resolution: None, Response Time: 0 ms
 Name: 内蒙古卫视, URL: http://[2409:8087:1a01:df::401a]:80/wh7f454c46tw3029083262_-802204014/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225634/index.m3u8?icpid=88888888&RTS=1713969858&from=4&hms_devid=128&prioritypopid=4&online=1713969858&vqe=3$订阅源, Date: None, Resolution: None, Response Time: 0 ms
 Name: 黑莓电影, URL: http://[2409:8087:1a0b:df::4014]:80/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221225743/index.m3u8$订阅源, Date: None, Resolution: None, Response Time: 0 ms
-Name: 安多卫视, URL: http://[2409:8087:1a0b:df::4007]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225659/index.m3u8$订阅源, Date: None, Resolution: None, Response Time: 0 ms
+Name: 安多卫视, URL: http://[2409:8087:1a0b:df::4007]:80/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221225659/index.m3u8$订阅源, Date: None, Resolution: None, Response Time: 0 ms
 Name: 黑莓动画, URL: http://[2409:8087:1a01:df::4007]:80/TVOD/88888888/224/3221225529/main.m3u8$订阅源, Date: None, Resolution: None, Response Time: 0 ms
 Name: 精品体育, URL: http://[2409:8087:1a0b:df::4004]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225674/index.m3u8$订阅源, Date: None, Resolution: None, Response Time: 0 ms
 Name: 超级体育, URL: http://[2409:8087:1a0b:df::4017]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225715/index.m3u8$订阅源, Date: None, Resolution: None, Response Time: 0 ms

@@ -1,5 +1,5 @@
 更新时间,#genre#
-2024-11-28 19:06:35,url
+2024-11-29 06:58:00,url
 🇨🇳 4K & 8K频道,#genre#
 华数4k,http://[2409:8087:5e01:24::10]:6610/000000001000/2000000004000000014/index.m3u8?stbId=3&livemode=1&HlsProfileId=&channel-id=hnbblive&Contentid=2000000004000000014&IASHttpSessionId=OTT19019320240419154124000281$订阅源|IPv6
 华数4k,http://[2409:8087:5e01:24::20]:6610/000000001000/2000000004000000014/index.m3u8?stbId=3&livemode=1&HlsProfileId=&channel-id=hnbblive&Contentid=2000000004000000014&IASHttpSessionId=OTT19019320240419154124000281$订阅源|IPv6
@@ -95,7 +95,7 @@ CCTV11,http://[2409:8087:1a01:df::4037]:80/TVOD/88888888/224/3221226123/main.m3u
 黑莓电影,http://[2409:8087:1a0b:df::4014]:80/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221225743/index.m3u8$订阅源|IPv6
 
 黑龙江移动v4v6,#genre#
-安多卫视,http://[2409:8087:1a0b:df::4007]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225659/index.m3u8$订阅源|IPv6
+安多卫视,http://[2409:8087:1a0b:df::4007]:80/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221225659/index.m3u8$订阅源|IPv6
 黑莓动画,http://[2409:8087:1a01:df::4007]:80/TVOD/88888888/224/3221225529/main.m3u8$订阅源|IPv6
 
 海南移动IPV6,#genre#
