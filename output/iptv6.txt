@@ -1,11 +1,11 @@
 更新时间,#genre#
-2024-11-29 16:29:15,url
+2024-11-29 18:16:07,url
 🇨🇳 4K & 8K频道,#genre#
 华数4k,http://[2409:8087:5e01:24::10]:6610/000000001000/2000000004000000014/index.m3u8?stbId=3&livemode=1&HlsProfileId=&channel-id=hnbblive&Contentid=2000000004000000014&IASHttpSessionId=OTT19019320240419154124000281$订阅源|IPv6
 华数4k,http://[2409:8087:5e01:24::20]:6610/000000001000/2000000004000000014/index.m3u8?stbId=3&livemode=1&HlsProfileId=&channel-id=hnbblive&Contentid=2000000004000000014&IASHttpSessionId=OTT19019320240419154124000281$订阅源|IPv6
 华数4k,http://[2409:8087:5e01:24::21]:6610/000000001000/2000000004000000014/index.m3u8?stbId=3&livemode=1&HlsProfileId=&channel-id=hnbblive&Contentid=2000000004000000014&IASHttpSessionId=OTT19019320240419154124000281$订阅源|IPv6
-CCTV4K,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000382/index.m3u8?IASHttpSessionId=$订阅源|IPv6
 CCTV4K,http://[2409:8087:3c02:0021:0000:0001:0000:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000382/index.m3u8?IASHttpSessionId=$订阅源|IPv6
+CCTV4K,http://[2409:8087:3c02:21:0:1:0:100a]:6410/shandong_cabletv.live.zte.com////CHANNEL00000382/index.m3u8?IASHttpSessionId=$订阅源|IPv6
 欢笑剧场4K,http://[2409:8087:5e00:24::1e]:6060/000000001000/5000000002000009455/index.m3u8?channel-id=bestzb&Contentid=5000000002000009455&livemode=1&stbId=3$订阅源|IPv6
 纪实人文,http://[2409:8087:74d9:21::6]/270000001322/69900158041111100000002199/index.m3u8$订阅源|IPv6
 纪实人文,http://[2409:8087:1a01:df::7005]:80/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221225738/index.m3u8$订阅源|IPv6
@@ -18,8 +18,8 @@ CCTV4欧洲,http://[2409:8087:4c0a:22:1::11]:6410/170000001115/UmaiCHAN5000037BE
 CCTV4欧洲,http://[2409:8087:1a0a:df::4031]:80/ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221226428/index.m3u8$订阅源|IPv6
 CCTV4欧洲,http://[2409:8087:5e00:24::1f]:6060/ZTE_CMS/00000001000000060000000000000485/index.m3u8$订阅源|IPv6
 CHC动作电影,http://[2409:8087:2001:20:2800:0:df6e:eb06]:80/wh7f454c46tw1555700033_-766721196/ott.mobaibox.com/PLTV/3/224/3221227606/index.m3u8?icpid=3&RTS=1674385966&from=40&popid=40&hms_devid=2036&prioritypopid=40&vqe=3$订阅源|IPv6
-CHC动作电影,http://[2409:8087:1a01:df::4021]:80/TVOD/88888888/224/3221225555/main.m3u8$订阅源|IPv6
 CHC动作电影,http://[2409:8087:1a01:df::4021]/TVOD/88888888/224/3221225555/main.m3u8$订阅源|IPv6
+CHC动作电影,http://[2409:8087:1a01:df::4021]:80/TVOD/88888888/224/3221225555/main.m3u8$订阅源|IPv6
 
 🇨🇳 港.澳.财经.美食,#genre#
 五星体育,http://[2409:8087:1e03:21::2]:6060/cms001/ch00000090990000001018/index.m3u8$订阅源|IPv6
