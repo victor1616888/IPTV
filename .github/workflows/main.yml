@@ -4,8 +4,9 @@ on:
   schedule:
     - cron: '0 22 * * *'
     - cron: '0 10 * * *'
+    - cron: '0 18 * * *'
   workflow_dispatch:
-    branches:
+    分支:
       - master
       - dev
       - gd
